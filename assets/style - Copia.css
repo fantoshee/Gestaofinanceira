@@ -1,0 +1,361 @@
+body{
+    background-color: #091540;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.body2{
+  position: absolute;
+  background-color: #091540;
+  font-family: sans-serif;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+input{
+    width: 15rem;
+    height: 1.8rem;
+    border-radius: 8px;
+} 
+
+.usuario{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.usuario label{
+    display: flex;
+    width: 15rem;
+}
+
+.senha{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.8rem;
+}
+.senha label{
+    display: flex;
+    width: 15rem;
+}
+
+
+.form{
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.texto-login{
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -5rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.box {
+    border-radius: 10px;
+    width: 25rem;
+    height: 20rem;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+
+.div-saldo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.linha{
+  width: 200px;
+  border: 3px solid ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*CSS LOGIN */
+
+@media screen  and (min-width: 768px){
+
+    .header-login{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+    }
+
+    .content{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column
+    }
+
+    
+}
+
+
+.header-login{
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+  margin-right: 70rem;
+}
+
+.header-login h1{
+  font-size: 3rem;
+}
+
+.header-login a{
+  font-size: 1rem;
+}
+
+
+.box-login{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 25rem;
+  height: 20rem;
+  border-radius: 12px;
+  margin-left: 60rem;
+  position: relative;
+  margin-top: -50rem;
+  color: black;
+}
+
+.box-email{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+.box-senha{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.img-login{
+    max-width: 100%;
+    max-width: 50rem;
+}
+
+.btn_login{
+  display: flex;
+  margin-top: 20px;
+  width: 7rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #091540;
+  color: white;
+}
+
+.form_login{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+}
+
+.contanova{
+  display: flex;
+  margin-top: -50rem;
+
+}
+
+.contanova{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: -17rem;
+  margin-top: -22rem;
+
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: auto;
+  border-radius: 40px;
+}
+
+.content .a{
+  padding-bottom: 0.1rem;
+  padding-top: 0.3rem;
+  text-align: right; 
+}
+
+.body_cadastro{
+  background-color: #091540;
+  margin: 0px;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+}
+.box {
+  width: 500px;
+  height: 500px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  box-shadow: 7px 7px  black;
+}
+
+.box a{
+  color: #111;
+}
+
+.btn_cadastra{
+  display: block;
+  height: 3rem;
+  width: 8rem;
+  margin-top: 1rem;
+  background-color: #091540;
+  color: white;
+  cursor: pointer;
+
+}
+
+.requisitos{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: -10rem;
+
+}
+
+/**/
+input{
+  color: black !important;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  border-bottom: solid 3px;
+}
+
+.header-system{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  color: black;
+  
+}
+
+.header-system a{
+  color: #000;
+  font-size: 1.5rem;
+}
+
+.menu{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #7692ff;
+  height: 5rem;
+}
+
+.menu a{
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.caixa{
+  display: flex;
+  justify-content: center;
+  background-color: #3d518c;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  justify-content: center;
+  width: 20rem;
+  height: 10rem;
+}
+
+.caixa a{
+  display: flex;
+  margin-top: 1rem;
+  font-size: 1rem;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.caixa h1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.despesas{
+  display: flex;
+  justify-content: center;
+  background-color: #3d518c;
+  height: 9rem;
+  width: 27rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+
+}
+
+.container-system {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
