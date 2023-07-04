@@ -1,5 +1,9 @@
+*{
+  min-height: 100%;
+}
+
+
 body{
-    background-color: #091540;
     color: white;
     font-family: sans-serif;
     font-weight: bold;
@@ -109,25 +113,7 @@ input{
 
 /*CSS LOGIN */
 
-@media screen  and (min-width: 768px){
 
-    .header-login{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-
-    }
-
-    .content{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column
-    }
-
-    
-}
 
 
 .header-login{
@@ -249,14 +235,23 @@ input{
 .box {
   width: 500px;
   height: 500px;
-  background: #fff;
+  background: #3d518c;
   display: flex;
   align-items: center;
   box-shadow: 7px 7px  black;
 }
 
+input{
+
+  border-color: white;
+}
+
+input::placeholder{
+  color: white;
+}
+
 .box a{
-  color: #111;
+  color: white;
 }
 
 .btn_cadastra{
@@ -264,10 +259,13 @@ input{
   height: 3rem;
   width: 8rem;
   margin-top: 1rem;
-  background-color: #091540;
-  color: white;
+  background-color: white;
+  color: black;
   cursor: pointer;
-
+  border-radius: 8px;
+  font-size: 1.2rem;
+  box-shadow: 2px 2px black;
+  font-weight: bold;
 }
 
 .requisitos{
@@ -286,76 +284,90 @@ input{
   border-left: transparent;
   border-right: transparent;
   border-bottom: solid 3px;
+  border-color: white;
 }
 
 .header-system{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   background-color: white;
   color: black;
   
 }
 
-.header-system a{
-  color: #000;
-  font-size: 1.5rem;
-}
 
-.menu{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+ul{
+	display: flex;
+	width: 100%;
+	height: 3.5rem;
+	margin: auto;
+	max-width: 1600px;
+	justify-content: space-between;
+	text-align: center;
   background-color: #7692ff;
-  height: 5rem;
+  list-style-type: none;
+  font-size: 19px;
 }
-
-.menu a{
-  color: white;
-  font-size: 1.5rem;
+a {
+	padding: 1rem 2rem 1.15rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #ebebeb;
+	min-width: 80px;
+	margin: auto;
   text-decoration: none;
 }
 
-.caixa{
-  display: flex;
-  justify-content: center;
-  background-color: #3d518c;
-  margin-top: 1rem;
-  border-radius: 1rem;
-  justify-content: center;
-  width: 20rem;
-  height: 10rem;
+a:hover {
+  background-size: 100% 100%;
+  color: #091540;
+  animation: spring 300ms ease-out;
+  text-shadow: 0 -1px 0 black;
+	font-weight: bold;
 }
 
-.caixa a{
-  display: flex;
-  margin-top: 1rem;
-  font-size: 1rem;
-  justify-content: center;
-  flex-direction: row;
+
+@keyframes spring {
+  15% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1.2, 1.1);
+  }
+  40% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(0.95, 0.95);
+  }
+  75% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1.05, 1);
+  }
+  100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1, 1);
+  }
 }
 
-.caixa h1{
+
+/*FIM DO MENU*/
+
+.corpo{
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.despesas{
-  display: flex;
-  justify-content: center;
-  background-color: #3d518c;
-  height: 9rem;
-  width: 27rem;
-  margin-top: 1rem;
-  border-radius: 1rem;
 
 }
 
-.container-system {
-  width: 100vw;
-  height: 100vh;
+.img{
+  width: 5rem;
+}
+
+.mes{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  color: black;
+}
+
+.mes-2{
+  text-align: center;
+  margin-left: 43rem;
 }
