@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/assets/style2.css" media="screen" />
+    <script type="text/javascript" src="assets/js/index.js"></script>
+    <title>Gestão Financeira - Despesas</title>
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="system.html">Home</a></li>
+        <li><a href="historico.html">Transações</a></li>
+        <li><a href="categorias.html">Categorias</a></li>
+        <li><a href="perfil.html">Perfil</a></li>
+      </ul>
+    
+      <h1>Despesas</h1>
+
+      <nav class="nav1">
+        <div class="filtros">
+            <div class="mes">
+                <a>De:</a>
+                <input type="date" class=data-filtro>        
+            </div>
+            <div class="mes">
+                <a>Até:</a>
+                <input type="date" class=data-filtro>        
+            </div>
+            <div class="descricao">
+            <a>Descrição</a>
+            <input type="text" class="input-descricao">
+            </div>
+            <div class="tipo">
+            <a>Pago/Não pago:</a>
+            <select>
+                <option></option>
+                <option value="pago">Pago</option>
+                <option value="npago">Não pago</option>
+            </select>
+            </div>
+            <div class="categoria">
+            <a>Categoria:</a>
+            <select>
+                <option></option>
+                <option>Categoria 1</option>
+                <option>Categoria 2</option>
+            </select>
+            </div>
+        </div> 
+      </nav>
+
+      <div class="caixa">
+        <div>
+          <a>Total: R$500,00</a>
+        </div>
+        
+        <div>
+          <a>Pago: R$358,00</a>
+        </div>
+        
+        <div>
+          <a>Não pago: R$142,00</a>
+        </div>
+      </div>
+
+      <div class="lancamentos-despesas">
+        <button id="myBtn">Nova Despesa</button>
+      </div>
+
+
+      <div class="historico-transacoes">
+        <table class="table1">
+            <th>Data</th>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Pago/não pago</th>
+            <th>Categoria</th>
+            <th>Opções</th>
+            
+            <tr>
+                
+                <td>01/07/2023</td>
+                <td>Reparo carro</td>
+                <td>R$358,00</td>
+                <td style="color: green;">Pago</td>
+                <td>Despesas</td>
+                <td><img src="/assets/img/options.svg"></td>
+            </tr>
+            <tr>
+                <td>05/07/2023</td>
+                <td>Conta agua</td>
+                <td>R$142,00</td>
+                <td style="color: red;">Não pago</td>
+                <td>Domestico</td>
+                <td><img src="/assets/img/options.svg"></td>
+            </tr>
+            
+        </table>
+      </div>
+    
+</body>
+</html>

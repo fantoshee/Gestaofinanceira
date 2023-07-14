@@ -11,29 +11,167 @@
 <body>
     
   <ul class="menu">
-    <li><a class="active" href="/pages/entradas.html">Entradas</a></li>
-    <li><a href="#news">Despesas</a></li>
-    <li><a href="#contact">Transações</a></li>
-    <li><a href="#about">Perfil</a></li>
+    <li><a href="historico.html">Transações</a></li>
+    <li><a href="despesas.html">Despesas</a></li>
+    <li><a href="categorias.html">Categorias</a></li>
+    <li><a href="perfil.html">Perfil</a></li>
   </ul>
 
-    <nav class="mes">
-      <h2>Selecione o mês e ano</h2>
-      <input type="month">
+  <h1>Caixa</h1>
+
+    <nav class="filtros">
+      
+      <div class="descricao">
+        <a>Descrição</a>
+        <input type="text" class="input-descricao">
+      </div>
+      <div class="tipo">
+        <a>Entrada/saida:</a>
+        <select>
+          <option></option>
+          <option value="entrada">Entrada</option>
+          <option value="saida">Saida</option>
+        </select>
+      </div>
+      <div class="categoria">
+        <a>Categoria:</a>
+        <select>
+          <option></option>
+          <option>Categoria 1</option>
+          <option>Categoria 2</option>
+        </select>
+      </div>
     </nav>
 
-    <h1>Caixa</h1>
+    <div class="caixa">
+      <div>
+        <a>Saldo do caixa: R$200,00</a>
+      </div>
+      
+      <div>
+        <a>Entradas: R$500,00</a>
+      </div>
+      
+      <div>
+        <a>Saidas: R$300,00</a>
+      </div>
+    </div>
     
-    <nav class="content">
+
+    <div class="lancamentos">
+      <button id="myBtn">Novo lançamento</button>
+    </div>
+
+    <div class="historico1">
+      <a>Descrição</a>
+      <a>Valor</a>
+      <a>Entrada/Saida</a>
+      <a>Data</a>
+      <a>Categoria</a>
+    </div>
+    <div class="historico2">
+      <div class="um">
+        <a>Compra</a>
+        <a>R$500,00</a>
+        <a>Entrada</a>
+        <a>10/07/2023</a>
+        <a>Receita</a>
+      </div>
+
+      <div class="dois">
+        <a>Conta xx</a>
+        <a>R$200,00</a>
+        <a>Saida</a>
+        <a>10/07/2023</a>
+        <a>Despesa</a>
+      </div>
+      
+      
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Novo lançamento</h2>
+        </div>
+        <div class="modal-body">
+
+          <label>Descrição</label>
+          <input type="text">
+          <label>Tipo lançamento</label>
+          <select name="tipo">
+            <option>Entrada</option>
+            <option>Saida</option>
+          </select>
+          <label>Valor</label>
+          <input type="number">
+          <label>Categoria</label>
+          <select name="categoria">
+              <option>Categoria 1</option>
+              <option>Categoria 2</option>
+          </select>
+          <label>Data</label>
+          <input type="date">
+
+        </div>
+        <div class="modal-footer">
+         
+        </div>
+      </div>
+    
+    </div>
+
+    <!--<nav class="content">
         <div class="entrada">
           <img src="/assets/img/entrada.png">
           <a>R$2.586,00</a>
           <img src="/assets/img/saida.png">
           <a>R$1.298,50</a>
         </div>
-    </nav>
+    </nav>-->
 
-
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+      
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+      
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+      
+      // When the user clicks the button, open the modal 
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+      
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+      </script>
 
 </body>
 </html>

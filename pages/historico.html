@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/assets/style2.css" media="screen" />
+    <script type="text/javascript" src="assets/js/index.js"></script>
+    <title>Gestão Financeira - Transações</title>
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="system.html">Home</a></li>
+        <li><a href="despesas.html">Despesas</a></li>
+        <li><a href="categorias.html">Categorias</a></li>
+        <li><a href="perfil.html">Perfil</a></li>
+      </ul>
+
+      <h1>Histórico de Transações</h1>
+
+      <nav class="nav1">
+        <div class="filtros">
+            <div class="mes">
+                <a>De:</a>
+                <input type="date" class=data-filtro>        
+            </div>
+            <div class="mes">
+                <a>Até:</a>
+                <input type="date" class=data-filtro>        
+            </div>
+            <div class="descricao">
+            <a>Descrição</a>
+            <input type="text" class="input-descricao">
+            </div>
+            <div class="tipo">
+            <a>Entrada/saida:</a>
+            <select>
+                <option></option>
+                <option value="entrada">Entrada</option>
+                <option value="saida">Saida</option>
+            </select>
+            </div>
+            <div class="categoria">
+            <a>Categoria:</a>
+            <select>
+                <option></option>
+                <option>Categoria 1</option>
+                <option>Categoria 2</option>
+            </select>
+            </div>
+        </div> 
+      </nav>
+
+     <!-- <button class="btn-filtro">Consultar</button>-->
+
+      <div class="caixa">
+        <div>
+          <a>Total: R$22.205,00</a>
+        </div>
+        
+        <div>
+          <a>Entradas: R$2.950,00</a>
+        </div>
+        
+        <div>
+          <a>Saidas: R$745,00</a>
+        </div>
+      </div>
+
+      <div class="historico1">
+        <a>Descrição</a>
+        <a>Valor</a>
+        <a>Entrada/Saida</a>
+        <a>Data</a>
+        <a>Categoria</a>
+        <a>Opções</a>
+      </div>
+
+      <div class="historico-transacoes">
+        <table class="table1">
+            <tr>
+                <td>Salario</td>
+                <td>R$3.500,00</td>
+                <td>Entrada</td>
+                <td>10/07/2023</td>
+                <td>Salário</td>
+                <td><img src="/assets/img/options.svg"></td>
+            </tr>
+            <tr>
+                <td>agua</td>
+                <td>R$200,00</td>
+                <td>Saida</td>
+                <td>11/07/2023</td>
+                <td>Conta domestica</td>
+                <td><img src="/assets/img/options.svg"></td>
+            </tr>
+            
+        </table>
+      </div>
+
+</body>
+</html>
