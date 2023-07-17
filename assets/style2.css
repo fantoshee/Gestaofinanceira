@@ -408,67 +408,62 @@ body h1{
     margin-bottom: 1rem;
 }
 
-.historico1{
-    background-color: rgba(255, 255, 255, 0.89);
+.historico-caixa{
     display: flex;
     justify-content: space-around;
     margin-top: 1rem;
-    box-shadow: 1px 3px rgba(255, 253, 253, 0.459);
 }
 
-.historico1 a{
+.table-caixa{
+    color: white;
+    width: 90%;
+    border-collapse: separate;
+}
+
+.table-caixa th{
     color: black;
-    font-size: 1.5rem;
-    display: flex;
-
 }
 
-.historico2 {
-    background-color: rgba(255, 253, 253, 0.459);
-    height: 29.9rem;
-
+.header-caixa{
+    background-color: white;
 }
 
-.um{
-    display: flex;
-    justify-content: space-around;
-}
-
-.um a{
-    margin-top: 1rem;
-    color: #091540;
-    font-size: 1.3rem;
-}
-
-.dois{
-    display: flex;
-    justify-content: space-around;
-}
-
-.dois a{
-    margin-top: 1rem;
-    color: #091540;
-    font-size: 1.3rem;
+.tr-caixa1{
+    background-color: white;
+    color: black;
+    text-align: center;
 }
 
 /*STYLE SYSTEM END*/
 
 /*STYLE HISTORICO/TRANSAÇÕES START*/
 
+
 .historico-transacoes{
     display: flex;
-
     justify-content: space-around;
+    margin-top: 1rem;
 }
 
-.table1{
+.table-transacoes{
     color: white;
-    border-spacing: 12.5rem 15px;
-
+    width: 90%;
+    border-collapse: separate;
 }
 
+.table-transacoes th{
+    color: black;
+}
 
+.header-transacoes{
+    background-color: white;
+}
 
+.tr-transacoes1{
+    background-color: white;
+    color: black;
+    text-align: center;
+}
 
 
 
@@ -494,14 +489,87 @@ body h1{
     border-color: white;
 }
 
-.table1 th{
-    background-color: white;
-    width: 200rem;
+.historico-despesas{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.table-despesas{
+    color: white;
+    width: 90%;
+    border-collapse: separate;
+}
+
+.table-despesas th{
     color: black;
 }
 
+.header-despesas{
+    background-color: white;
+}
+
+.tr-despesas1{
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+
+
+
 /*STYLE DESPESAS END*/
 
+/*STYLE CATEGORIAS START*/
+
+.lancamentos-categoria{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    
+}
+
+.lancamentos-categoria button{
+    font-size: 17px;
+    font-weight: bold !important;
+    border-radius: 5px;
+    height: 2rem;
+    background-color: #7692ff;
+    border-color: white;
+    color: white;
+}
+
+
+
+.historico-categoria{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.table-categoria{
+    color: white;
+    width: 90%;
+    border-collapse: separate;
+}
+
+.table-categoria th{
+    color: black;
+}
+
+.header-categorias{
+    background-color: white;
+}
+
+.tr-categoria1{
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+
+
+
+/*STYLE CATEGORIAS END*/
 
 
 /*MODAL STYLE*/
