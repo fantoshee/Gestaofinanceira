@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/assets/style2.css" media="screen" />
-    <script type="text/javascript" src="assets/js/index.js"></script>
+    <script type="text/javascript" src="assets/js/index.js"></script>   
     <title>Gestão Financeira - Sistema</title>
 </head>
 <body>
@@ -37,10 +37,15 @@
         <a>Categoria:</a>
         <select>
           <option></option>
-          <option>Categoria 1</option>
-          <option>Categoria 2</option>
+          <option value="despesas">Despesas</option>
+          <option value="domestico">Domestico</option>
+          <option value="Aluguel">Aluguel</option>
+          <option value="Alimentação">Alimentação</option>
+          <option value="Lazer">Lazer</option>
+          <option value="Despesas médicas">Despesas médicas</option>
         </select>
       </div>
+      
     </nav>
 
     <div class="caixa">
@@ -61,7 +66,6 @@
     <div class="lancamentos">
       <button id="myBtn">Novo lançamento</button>
     </div>
-
 
     <div class="historico-transacoes">
       <table class="table-transacoes">
@@ -87,8 +91,6 @@
     </div>
 
     <div id="myModal" class="modal">
-
-      <!-- Modal content -->
       <div class="modal-content">
         <div class="modal-header">
           <span class="close">&times;</span>
@@ -98,24 +100,28 @@
 
           <label>Descrição</label>
           <input type="text">
-          <label>Tipo lançamento</label>
+          <label>Valor</label>
+          <input type="number" placeholder="R$ 0,00" id="dinheiro"> 
+          <label>Categoria</label>
+          <select name="categoria">
+            <option></option>
+            <option value="despesas">Despesas</option>
+            <option value="domestico">Domestico</option>
+            <option value="Aluguel">Aluguel</option>
+            <option value="Alimentação">Alimentação</option>
+            <option value="Lazer">Lazer</option>
+            <option value="Despesas médicas">Despesas médicas</option>
+          </select>
+          <label>Tipo de lançamento</label>
           <select name="tipo">
             <option>Entrada</option>
             <option>Saida</option>
           </select>
-          <label>Valor</label>
-          <input type="number">
-          <label>Categoria</label>
-          <select name="categoria">
-              <option>Categoria 1</option>
-              <option>Categoria 2</option>
-          </select>
           <label>Data</label>
           <input type="date">
-
         </div>
-        <div class="modal-footer">
-         
+            <div class="btn-salvar-modal"><button class="btn-salvar">Salvar</button></div>
+            <div class="modal-footer">        
         </div>
       </div>
     
@@ -131,6 +137,7 @@
     </nav>-->
 
     <script>
+      
       // Get the modal
       var modal = document.getElementById("myModal");
       
@@ -156,6 +163,8 @@
           modal.style.display = "none";
         }
       }
+
+      
       </script>
 
 </body>
