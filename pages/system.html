@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/assets/style2.css" media="screen" />
-    <script type="text/javascript" src="assets/js/index.js"></script>   
+    <script type="text/javascript" src="assets/js/index.js"></script>
     <title>Gestão Financeira - Sistema</title>
 </head>
 <body>
@@ -37,15 +37,10 @@
         <a>Categoria:</a>
         <select>
           <option></option>
-          <option value="despesas">Despesas</option>
-          <option value="domestico">Domestico</option>
-          <option value="Aluguel">Aluguel</option>
-          <option value="Alimentação">Alimentação</option>
-          <option value="Lazer">Lazer</option>
-          <option value="Despesas médicas">Despesas médicas</option>
+          <option>Categoria 1</option>
+          <option>Categoria 2</option>
         </select>
       </div>
-      
     </nav>
 
     <div class="caixa">
@@ -64,8 +59,9 @@
     
 
     <div class="lancamentos">
-      <button id="myBtn">Novo lançamento</button>
+      <a id="a-modal" class="btn" href="#open-modal">Novo Lançamento</a>
     </div>
+
 
     <div class="historico-transacoes">
       <table class="table-transacoes">
@@ -90,82 +86,42 @@
       </table>
     </div>
 
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <span class="close">&times;</span>
-          <h2>Novo lançamento</h2>
-        </div>
-        <div class="modal-body">
 
-          <label>Descrição</label>
-          <input type="text">
-          <label>Valor</label>
-          <input type="number" placeholder="R$ 0,00" id="dinheiro"> 
-          <label>Categoria</label>
-          <select name="categoria">
-            <option></option>
-            <option value="despesas">Despesas</option>
-            <option value="domestico">Domestico</option>
-            <option value="Aluguel">Aluguel</option>
-            <option value="Alimentação">Alimentação</option>
-            <option value="Lazer">Lazer</option>
-            <option value="Despesas médicas">Despesas médicas</option>
-          </select>
-          <label>Tipo de lançamento</label>
-          <select name="tipo">
-            <option>Entrada</option>
-            <option>Saida</option>
-          </select>
-          <label>Data</label>
-          <input type="date">
-        </div>
-            <div class="btn-salvar-modal"><button class="btn-salvar">Salvar</button></div>
-            <div class="modal-footer">        
-        </div>
+    <div class="container">
+      <div class="interior">
+        
       </div>
-    
     </div>
 
-    <!--<nav class="content">
-        <div class="entrada">
-          <img src="/assets/img/entrada.png">
-          <a>R$2.586,00</a>
-          <img src="/assets/img/saida.png">
-          <a>R$1.298,50</a>
-        </div>
-    </nav>-->
-
-    <script>
-      
-      // Get the modal
-      var modal = document.getElementById("myModal");
-      
-      // Get the button that opens the modal
-      var btn = document.getElementById("myBtn");
-      
-      // Get the <span> element that closes the modal
-      var span = document.getElementsByClassName("close")[0];
-      
-      // When the user clicks the button, open the modal 
-      btn.onclick = function() {
-        modal.style.display = "block";
-      }
-      
-      // When the user clicks on <span> (x), close the modal
-      span.onclick = function() {
-        modal.style.display = "none";
-      }
-      
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      }
-
-      
-      </script>
+    <!--MODAL-->
+    <div id="open-modal" class="modal-window">
+      <div>
+        <a id="a-modal" href="#" title="Close" class="modal-close">Fechar</a>
+        <h1 id="h1-modal">Novo Lançamento</h1>
+        
+        <input type="text" placeholder="Descrição">
+         <br>
+        <input placeholder="Valor">
+         <br>
+        <select>
+          <option>Entrada</option>
+          <option>Saída</option>
+        </select>
+         <br>
+    <select>
+          <option></option>
+          <option>Categoria 1</option>
+          <option>Categoria 2</option>
+        </select>
+         <br>
+        <input type=date>
+        <br>
+        <input class="btn-enviar" type="button" value="Enviar"></input>
+        
+         
+      </div>
+    </div>
+    </div>
 
 </body>
 </html>

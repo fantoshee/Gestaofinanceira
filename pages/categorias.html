@@ -17,8 +17,8 @@
     
        <h1>Suas Categorias</h1>
 
-       <div class="lancamentos-categoria">
-        <button id="myBtn">Nova Categoria</button>
+       <div class="lancamentos">
+        <a id="a-modal" class="btn" href="#open-modal">Novo Lançamento</a>
       </div>
 
 
@@ -66,6 +66,23 @@
                 <td><img style="cursor: pointer;" src="/assets/img/options-black.svg"></td>
             </tr>
         </table>
+      </div>
+
+      <div id="open-modal" class="modal-window">
+
+        <div>
+          <a id="a-modal" href="#" title="Close" class="modal-close">Fechar</a>
+          <h1 id="h1-modal">Nova Categoria</h1>
+          
+          <input type="text" placeholder="Nome da despesa">
+           <br>
+          <input type=date>
+          <br>
+          <input class="btn-enviar" type="button" value="Criar">
+          
+           
+        </div>
+      </div>
       </div>
 
       
