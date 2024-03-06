@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/assets/style2.css" media="screen" />
+    <script type="text/javascript" src="assets/js/index.js"></script>
+    <title>Gestão Financeira - Sistema</title>
+</head>
+<body>
+    
+  <ul class="menu">
+    <li><a href="historico.html">Transações</a></li>
+    <li><a href="despesas.html">Despesas</a></li>
+    <li><a href="categorias.html">Categorias</a></li>
+    <li><a href="perfil.html">Perfil</a></li>
+  </ul>
+
+  <h1>Caixa</h1>
+
+    <nav class="filtros">
+      
+      <div class="descricao">
+        <a>Descrição</a>
+        <input type="text" class="input-descricao">
+      </div>
+      <div class="tipo">
+        <a>Entrada/saida:</a>
+        <select>
+          <option></option>
+          <option value="entrada">Entrada</option>
+          <option value="saida">Saida</option>
+        </select>
+      </div>
+      <div class="categoria">
+        <a>Categoria:</a>
+        <select>
+          <option></option>
+          <option>Categoria 1</option>
+          <option>Categoria 2</option>
+        </select>
+      </div>
+    </nav>
+
+    <div class="caixa">
+      <div>
+        <a>Saldo: R$</a>
+      </div>
+      
+      <div>
+        <a>Entradas: R$</a>
+      </div>
+      
+      <div>
+        <a>Saidas: R$</a>
+      </div>
+    </div>
+    
+
+    <div class="lancamentos">
+      <a id="a-modal" class="btn" href="#open-modal">Novo Lançamento</a>
+    </div>
+
+
+    <div class="historico-transacoes">
+      <table id="dataTable" class="table-transacoes">
+          <thead class="header-transacoes">
+              <th>Descrição</th>
+              <th>Data</th>
+              <th>Valor</th>
+              <th>Entrada/Saida</th>
+              <th>Categoria</th>
+              <th>Ações</th>
+
+              <tbody id="dataBody">
+                <!-- Aqui serão adicionadas as linhas -->
+              </tbody>
+          </thead>
+
+          <!-- Modal para opções -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharModal()">&times;</span>
+      <p>Selecione uma opção:</p>
+      <button onclick="editarLinha()">Editar</button>
+      <button onclick="excluirLinha()">Excluir</button>
+    </div>
+  </div>
+
+  <!-- Modal para edição -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharEditModal()">&times;</span>
+      <p>Editar dados:</p>
+      <label for="editDescricao">Descrição:</label>
+      <input type="text" id="editDescricao"><br><br>
+
+      <label for="editData">Data:</label>
+      <input type="date" id="editData"><br><br>
+
+      <label for="editValor">Valor:</label>
+      <input type="number" id="editValor"><br><br>
+
+      <label for="editTipo">Entrada/Saída:</label>
+      <select id="editTipo">
+        <option value="entrada">Entrada</option>
+        <option value="saida">Saída</option>
+      </select><br><br>
+
+      <label for="editCategoria">Categoria:</label>
+      <select id="editCategoria">
+        <option value="categoria1">Categoria 1</option>
+        <option value="categoria2">Categoria 2</option>
+        <option value="categoria3">Categoria 3</option>
+      </select><br><br>
+
+      <button onclick="salvarEdicao()">Salvar</button>
+    </div>
+  </div>
+            
+    </div>
+
+
+    <!--MODAL-->
+    <div id="open-modal" class="modal-window">
+      <div>
+        <a id="a-modal" href="#" title="Close" class="modal-close">Fechar</a>
+        <h1 id="h1-modal">Novo Lançamento</h1>
+        
+        <label>Descrição</label>
+        <input type="text" placeholder="" id="descricao">
+         <br>
+
+          <label>Valor</label>
+          <input placeholder="" type="text" id="valor">
+           <br>
+
+         <label>Tipo</label>
+          <select id="tipo">
+            <option>Selecione uma opção</option>
+            <option>Entrada</option>
+            <option>Saída</option>
+        </select>
+         <br>
+
+         <label>Categoria</label>
+          <select id="categoria">
+          <option>Selecione a categoria</option>
+          <option>Categoria 1</option>
+          <option>Categoria 2</option>
+        </select>
+         <br>
+
+         <label>Data</label>
+        <input type=date id="data">
+        <span id="errorSpan" style="color: red; display: none;">Por favor, preencha todos os campos!</span>
+        <br>
+        <input class="btn-enviar" type="button" value="Enviar" onclick="adicionarLinha()">
+        
+      </div>
+    </div>
+    </div>
+
+    <script>
+
+function adicionarLinha() {
+      var descricao = document.getElementById('descricao').value;
+      var data = document.getElementById('data').value;
+      var valor = document.getElementById('valor').value;
+      var tipo = document.getElementById('tipo').value;
+      var categoria = document.getElementById('categoria').value;
+
+      if (!descricao || !data || !valor || !tipo || !categoria) {
+        document.getElementById('errorSpan').style.display = 'block';
+        return;
+      }
+
+      document.getElementById('errorSpan').style.display = 'none';
+
+      var table = document.getElementById('dataBody');
+      var newRow = table.insertRow();
+      var cell1 = newRow.insertCell(0);
+      var cell2 = newRow.insertCell(1);
+      var cell3 = newRow.insertCell(2);
+      var cell4 = newRow.insertCell(3);
+      var cell5 = newRow.insertCell(4);
+      var cell6 = newRow.insertCell(5);
+
+      cell1.innerHTML = descricao;
+      cell2.innerHTML = formatarData(data);
+      cell3.innerHTML = formatarValor(valor);
+      cell4.innerHTML = tipo;
+      cell5.innerHTML = categoria;
+      cell6.innerHTML = '<button onclick="abrirModal(this)">Opções</button>';
+
+      // Salva os dados em cookies
+      var cookieData = JSON.parse(localStorage.getItem('tableData')) || [];
+      cookieData.push({ descricao: descricao, data: data, valor: valor, tipo: tipo, categoria: categoria });
+      localStorage.setItem('tableData', JSON.stringify(cookieData));
+
+      // Limpa os campos do formulário após adicionar a linha
+      document.getElementById('descricao').value = '';
+      document.getElementById('data').value = '';
+      document.getElementById('valor').value = '';
+      document.getElementById('descricao').focus(); // Coloca o foco de volta no campo de descrição
+    }
+
+    // Função para formatar a data como dia-mês-ano
+    function formatarData(data) {
+      var dataObj = new Date(data);
+      var dia = dataObj.getDate().toString().padStart(2, '0');
+      var mes = (dataObj.getMonth() + 1).toString().padStart(2, '0');
+      var ano = dataObj.getFullYear();
+      return dia + '-' + mes + '-' + ano;
+    }
+
+    // Função para formatar o valor com o símbolo "R$"
+    function formatarValor(valor) {
+      return 'R$ ' + parseFloat(valor).toFixed(2);
+    }
+
+    // Carrega os dados salvos em cookies ao carregar a página
+    window.onload = function() {
+      var savedData = JSON.parse(localStorage.getItem('tableData')) || [];
+      var tableBody = document.getElementById('dataBody');
+      savedData.forEach(function(data) {
+        var newRow = tableBody.insertRow();
+        newRow.insertCell(0).innerHTML = data.descricao;
+        newRow.insertCell(1).innerHTML = formatarData(data.data);
+        newRow.insertCell(2).innerHTML = formatarValor(data.valor);
+        newRow.insertCell(3).innerHTML = data.tipo;
+        newRow.insertCell(4).innerHTML = data.categoria;
+        newRow.insertCell(5).innerHTML = '<button onclick="abrirModal(this)">Opções</button>';
+      });
+    }
+
+    // Abre o modal de opções
+    function abrirModal(button) {
+      var modal = document.getElementById('myModal');
+      modal.style.display = 'block';
+      var currentRow = button.parentNode.parentNode;
+      modal.currentRowIndex = currentRow.rowIndex;
+    }
+
+    // Fecha o modal
+    function fecharModal() {
+      var modal = document.getElementById('myModal');
+      modal.style.display = 'none';
+    }
+
+    // Edita a linha
+    function editarLinha() {
+      var modal = document.getElementById('myModal');
+      var editModal = document.getElementById('editModal');
+      var rowIndex = modal.currentRowIndex;
+      var row = document.getElementById('dataTable').rows[rowIndex];
+      document.getElementById('editDescricao').value = row.cells[0].innerHTML;
+      document.getElementById('editData').value = row.cells[1].innerHTML.split('-').reverse().join('-');
+      document.getElementById('editValor').value = row.cells[2].innerHTML.substring(3);
+      document.getElementById('editTipo').value = row.cells[3].innerHTML;
+      document.getElementById('editCategoria').value = row.cells[4].innerHTML;
+      fecharModal();
+      editModal.style.display = 'block';
+      editModal.currentRowIndex = rowIndex;
+    }
+
+    // Fecha o modal de edição
+    function fecharEditModal() {
+      var editModal = document.getElementById('editModal');
+      editModal.style.display = 'none';
+    }
+
+    // Salva a edição
+    function salvarEdicao() {
+      var editModal = document.getElementById('editModal');
+      var rowIndex = editModal.currentRowIndex;
+      var row = document.getElementById('dataTable').rows[rowIndex];
+      row.cells[0].innerHTML = document.getElementById('editDescricao').value;
+      row.cells[1].innerHTML = formatarData(document.getElementById('editData').value);
+      row.cells[2].innerHTML = formatarValor(document.getElementById('editValor').value);
+      row.cells[3].innerHTML = document.getElementById('editTipo').value;
+      row.cells[4].innerHTML = document.getElementById('editCategoria').value;
+      fecharEditModal();
+    }
+
+    // Exclui a linha
+    function excluirLinha() {
+      var modal = document.getElementById('myModal');
+      var rowIndex = modal.currentRowIndex;
+      document.getElementById('dataTable').deleteRow(rowIndex);
+      // Implemente a lógica de exclusão aqui
+      fecharModal();
+    }
+
+
+    </script>
+
+  
+
+</body>
+</html>
