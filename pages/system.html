@@ -99,29 +99,71 @@
         <a id="a-modal" href="#" title="Close" class="modal-close">Fechar</a>
         <h1 id="h1-modal">Novo Lançamento</h1>
         
-        <input type="text" placeholder="Descrição">
+        <label>Descrição</label>
+        <input type="text" placeholder="" id="descricao">
+        <span id="descricaoAlerta" style="color: red;"></span>
          <br>
-        <input placeholder="Valor">
-         <br>
-        <select>
-          <option>Entrada</option>
-          <option>Saída</option>
+
+          <label>Valor</label>
+          <input placeholder="" type="number" id="valor">
+          <span id="valorAlerta" style="color: red;"></span>
+           <br>
+
+         <label>Tipo</label>
+          <select id="tipo">
+            <option>Selecione uma opção</option>
+            <option>Entrada</option>
+            <option>Saída</option>
         </select>
+        <span id="tipoAlerta" style="color: red;"></span>
          <br>
-    <select>
-          <option></option>
+
+         <label>Categoria</label>
+          <select id="categoria">
+          <option>Selecione a categoria</option>
           <option>Categoria 1</option>
           <option>Categoria 2</option>
         </select>
+        <span id="categoriaAlerta" style="color: red;"></span>
          <br>
-        <input type=date>
+
+         <label>Data</label>
+        <input type=date id="data">
+        <span id="dataAlerta" style="color: red;"></span>
         <br>
-        <input class="btn-enviar" type="button" value="Enviar"></input>
+        <input class="btn-enviar" type="button" value="Enviar" onclick="validarForm()">
         
          
       </div>
     </div>
     </div>
+
+    <script>
+
+          function validarForm() {
+            var descricao = document.getElementById('descricao').value;
+            var valor = document.getElementById('valor').value;
+            var tipo = document.getElementById('tipo').value;
+            var categoria = document.getElementById('categoria').value;
+            var data = document.getElementById('data').value;
+
+            exibirAlerta(descricao, 'descricao');
+            exibirAlerta(valor, 'valor');
+            exibirAlerta(tipo, 'tipo');
+            exibirAlerta(categoria, 'categoria');
+            exibirAlerta(data, 'data');
+          }
+
+          function exibirAlerta(valorCampo, idCampo) {
+            var campoAlerta = document.getElementById(idCampo + 'Alerta');
+            if (valorCampo.trim() === '') {
+              campoAlerta.textContent = 'Por favor, preencha este campo.';
+            } else {
+              campoAlerta.textContent = '';
+            }
+          }
+     
+    </script>
 
 </body>
 </html>
